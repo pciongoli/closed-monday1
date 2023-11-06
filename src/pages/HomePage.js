@@ -27,11 +27,11 @@ const HomePage = () => (
          </video>
          <div className="action-buttons">
             <button onClick={() => (window.location.href = "/contact")}>
-               GET IN CONTACT WITH US
+               TALK WITH US{" "}
             </button>
 
             <button onClick={() => (window.location.href = "/portfolio")}>
-               SEE SOME OF OUR WORK!
+               SEE OUR WORK{" "}
             </button>
          </div>
       </div>

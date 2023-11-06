@@ -26,6 +26,27 @@ const projects = [
       technicalDetails: "Technical details...",
       type: "iframe",
    },
+   ,
+   {
+      mediaUrl: "https://www.youtube.com/embed/bTi_OD9R1ZE",
+      title: "YouTube Short 1",
+      type: "youtube_short",
+   },
+   {
+      mediaUrl: "https://www.youtube.com/embed/tN6iz9P6A3c",
+      title: "YouTube Short 2",
+      type: "youtube_short",
+   },
+   {
+      mediaUrl: "https://www.youtube.com/embed/okyYbCBIwFo",
+      title: "YouTube Short 3",
+      type: "youtube_short",
+   },
+   {
+      mediaUrl: "https://www.youtube.com/embed/fPMvyeEZ9Hc",
+      title: "YouTube Short 4",
+      type: "youtube_short",
+   },
 ];
 
 const PortfolioPage = () => {
@@ -36,6 +57,21 @@ const PortfolioPage = () => {
                <source src={project.mediaUrl} type="video/mp4" />
                Your browser does not support the video tag.
             </video>
+         );
+         {
+            /* YouTube Shorts Section */
+         }
+      } else if (project.type === "youtube_short") {
+         return (
+            <iframe
+               title={project.title}
+               style={{ borderRadius: "12px" }}
+               width="100%"
+               height="352"
+               src={project.mediaUrl}
+               allowFullScreen=""
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            ></iframe>
          );
       } else if (project.type === "tiktok") {
          return (
@@ -73,7 +109,6 @@ const PortfolioPage = () => {
             <a href="#audio">Audio</a>
             <a href="#video">Video</a>
          </div>
-
          <section id="podcasts">
             <h2>Podcasts</h2>
             <div className="projects">
@@ -93,7 +128,18 @@ const PortfolioPage = () => {
                   ))}
             </div>
          </section>
-
+         <section>
+            <h2>YouTube Shorts</h2>
+            <div
+               id="youtube-shorts"
+               className="media-section youtube-short-container"
+            >
+               {projects
+                  .filter((project) => project.type === "youtube_short")
+                  .map(renderMedia)}
+            </div>
+         </section>
+         ;
          <section id="audio">
             <h2>Audio</h2>
             <div className="projects">

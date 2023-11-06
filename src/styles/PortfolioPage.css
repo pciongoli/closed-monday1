@@ -133,3 +133,19 @@ section h2 {
       margin: 10px 0;
    }
 }
+
+/* Styles for YouTube Shorts section to match the projects section */
+.youtube-short-container {
+   display: flex;
+   overflow-x: auto;
+   overflow-y: hidden;
+   white-space: nowrap;
+   gap: 20px;
+}
+
+.youtube-short-container iframe {
+   border: none;
+   border-radius: 12px; /* Assuming we want to keep the border-radius as in the projects */
+   width: 315px; /* Fixed width as specified */
+   height: 560px; /* Fixed height as specified */
+}
