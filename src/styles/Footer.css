@@ -1,0 +1,131 @@
+.footer {
+   display: flex;
+   color: white;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px 40px;
+   background-color: black; /* Updated background color */
+}
+
+.footer-logo-link {
+   text-decoration: none; /* Remove underline */
+   color: white; /* Set color to white */
+   transition: color 0.3s; /* Transition for hover effect */
+}
+
+.footer-logo-link:hover {
+   color: gold; /* Highlight color on hover */
+}
+
+.footer-logo {
+   font-size: 1.5em;
+   font-weight: bold;
+   flex: 1;
+   margin-bottom: 10px;
+}
+
+.email {
+   color: white;
+}
+.phone {
+   color: white;
+}
+
+.copyright {
+   color: gold;
+}
+
+.footer-content {
+   display: flex;
+   flex: 3;
+   align-items: center;
+   gap: 40px;
+}
+
+.footer-contact {
+   text-align: center;
+   flex: 2;
+   color: white;
+}
+
+.footer-link {
+   text-decoration: none; /* Remove underline */
+   color: white; /* Same color as other text */
+   margin: 5px 0;
+   display: block;
+   transition: color 0.3s;
+}
+
+.footer-link:hover {
+   color: gold; /* Highlight on hover */
+}
+
+.footer-icons {
+   order: 1;
+   display: flex;
+   gap: 20px;
+   flex: 1;
+}
+
+.footer-icons a {
+   color: #fff;
+   font-size: 1.2em;
+   transition: color 0.3s;
+}
+
+.footer-icons a:hover {
+   color: #ff5733;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+   .footer {
+      flex-direction: column;
+      gap: 20px;
+      padding: 10px;
+   }
+
+   .footer-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+   }
+
+   .footer .footer-contact {
+      align-items: center;
+      gap: 10px;
+   }
+
+   .footer-icons {
+      justify-content: center;
+      margin: 10px 0;
+   }
+}
+
+@media (max-width: 600px) {
+   .footer {
+      gap: 15px;
+      padding: 10px 20px;
+   }
+
+   .footer-logo {
+      font-size: 1.3em;
+      margin-bottom: 8px;
+   }
+
+   .footer-content {
+      gap: 12px;
+   }
+
+   .footer-contact {
+      gap: 8px;
+   }
+
+   .footer-icons {
+      gap: 15px;
+   }
+
+   .footer-icons a {
+      font-size: 1em;
+   }
+}

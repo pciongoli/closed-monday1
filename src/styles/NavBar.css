@@ -1,0 +1,148 @@
+/* NavBar.css */
+
+.navbar {
+   transition: top 0.3s;
+   position: fixed;
+   top: -100px; /* Initially hide the navbar */
+   width: 100%;
+   z-index: 10;
+   background-color: black;
+}
+
+.nav-logo h2 {
+   color: white;
+   margin: 0;
+}
+
+.nav-logo {
+   position: absolute;
+   right: 0;
+   top: 0;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   padding-right: 20px;
+}
+
+.menu-icon {
+   order: -1;
+
+   z-index: 2000;
+   font-size: 2rem;
+   cursor: pointer;
+   color: white;
+   /* Pushes the icon to the right */
+   padding-right: 40px;
+}
+
+.nav-links {
+   list-style: none;
+   padding: 0;
+   color: black;
+   background-color: black;
+   display: none;
+   flex-direction: column;
+   gap: 15px;
+   position: absolute;
+   top: 60px;
+   right: 30px;
+   border-radius: 5px;
+   z-index: 1500;
+   max-width: 130px; /* Set the maximum width of the navbar */
+}
+
+.nav-links.active {
+   display: flex;
+}
+
+.nav-links li {
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+
+.nav-links li a {
+   text-decoration: none;
+   color: white;
+   font-weight: bolder;
+   display: block; /* This makes the anchor fill the entire space of the list item */
+   padding: 10px 25px; /* Adjusted padding */
+   font-size: 1.1rem;
+   transition: background-color 0.3s;
+}
+
+.nav-links li a:hover {
+   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-logo-link {
+   text-decoration: none; /* Remove underline */
+   transition: color 0.3s; /* Transition for hover effect */
+}
+
+.navbar-logo-link:hover {
+   color: gold; /* Highlight color on hover */
+}
+
+@keyframes slideDown {
+   from {
+      transform: translateY(-100%);
+      visibility: hidden;
+   }
+   to {
+      transform: translateY(0);
+      visibility: visible;
+   }
+}
+
+/* Styles for nav-links when they are not active */
+.nav-links {
+   transition: transform 0.3s ease, visibility 0.3s;
+   transform: translateY(-100%);
+   visibility: hidden;
+   opacity: 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   position: absolute;
+   top: 100%; /* Position right under the menu icon */
+   left: 0;
+   width: 100%;
+   z-index: 999; /* Ensure it's on top of other content */
+   padding-top: 1px; /* Space from the top of the navbar */
+   box-sizing: border-box;
+}
+
+/* Styles for nav-links when they are active */
+.nav-links.active {
+   transform: translateY(0);
+   visibility: visible;
+   opacity: 1;
+}
+
+/* Ensure the menu icon stays on the left on all screen sizes */
+.menu-icon {
+   order: -1;
+   padding-right: 0;
+   padding-left: 20px; /* Spacing from the left edge of the screen */
+}
+
+/* Styles adjustments for navbar on smaller screens */
+@media (max-width: 768px) {
+   .navbar {
+      transition: top 0.3s;
+      position: fixed;
+      top: -100px; /* Initially hide the navbar */
+      width: 100%;
+      z-index: 10;
+   }
+}
+.navbar-logo-image {
+   height: auto; /* Adjust the height as necessary */
+   width: 100px; /* Example width, adjust as needed for your design */
+   max-width: 100%; /* Ensure it is responsive and does not exceed its container */
+   display: block; /* To remove any extra space under the image */
+}
+.navbar.visible {
+   top: 0; /* Show the navbar when the user has scrolled */
+}

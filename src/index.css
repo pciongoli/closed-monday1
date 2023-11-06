@@ -1,0 +1,13 @@
+/* index.css */
+
+body {
+   margin: 0;
+   font-family: "DM Sans", sans-serif; /* This sets Roboto as the primary font for the body */
+   background-color: #ffffff;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+   font-family: "DM Sans", monospace;
+}

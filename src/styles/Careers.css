@@ -1,0 +1,48 @@
+.careers-container {
+   padding: 50px;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+.careers-section {
+   margin: 20px 0;
+}
+
+h1,
+h2 {
+   color: #333;
+}
+
+p,
+ul {
+   color: #555;
+   font-size: 1em;
+   line-height: 1.5;
+}
+
+ul {
+   list-style-type: disc;
+   padding-left: 20px;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+   .careers-container {
+      padding: 20px;
+   }
+}
+
+@media (max-width: 480px) {
+   h1 {
+      font-size: 1.5em;
+   }
+
+   h2 {
+      font-size: 1.2em;
+   }
+
+   p,
+   ul {
+      font-size: 0.9em;
+   }
+}
