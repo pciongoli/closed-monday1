@@ -106,6 +106,7 @@ const PortfolioPage = () => {
          <h1>A little taste of what we do</h1>
          <div className="filters">
             <a href="#podcast">Podcast</a>
+            <a href="#youtube-shorts">Youtube Shorts</a>
             <a href="#audio">Audio</a>
             <a href="#video">Video</a>
          </div>
