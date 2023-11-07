@@ -26,9 +26,7 @@ const ContactPage = () => (
          </div>
          <div className="contact-details">
             <h2>Contact Details</h2>
-            <p>Phone: +1 234 567 890</p>
             <p>Email: contact@videoeditor.com</p>
-            <p>Address: 123 Video Lane, Edit City, VC 12345</p>
          </div>
       </div>
    </div>

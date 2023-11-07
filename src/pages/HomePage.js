@@ -1,22 +1,16 @@
 // HomePage.js
-import React from "react";
+import React, { useEffect } from "react";
 import videoEditorImage from "../assets/image/video-editor-img2.png";
 import videoEditorImage2 from "../assets/image/video-editor-img3.png";
-import PodcastSection from "../components/PodcastSection"; // Corrected import path
-import YouTubeShortsSection from "../components/YouTubeShortsSection"; // Corrected import path
-import Slider from "react-slick";
+import PodcastSection from "../components/PodcastSection";
+import YouTubeShortsSection from "../components/YouTubeShortsSection";
+import InstagramReelsSection from "../components/InstagramReelsSection";
+import instagramReelsLogo from "../assets/image/instagram-reels-logo.png";
+import tiktokLogo from "../assets/image/tiktok-logo.png";
+import youtubeShortsLogo from "../assets/image/youtube-shorts-logo.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/HomePage.css";
-
-const settings = {
-   dots: true,
-   infinite: true,
-   speed: 500,
-   slidesToShow: 1,
-   slidesToScroll: 1,
-   autoplay: true,
-};
 
 const projects = [
    {
@@ -43,7 +37,7 @@ const projects = [
       technicalDetails: "Technical details...",
       type: "iframe",
    },
-   ,
+
    {
       mediaUrl: "https://www.youtube.com/embed/tN6iz9P6A3c",
       title: "YouTube Short 2",
@@ -59,6 +53,38 @@ const projects = [
       title: "YouTube Short 4",
       type: "youtube_short",
    },
+
+   {
+      mediaUrl: "https://www.instagram.com/reel/CtH4gjyJ1CO/",
+      title: "Instagram Reel 1",
+      details: "Details for Instagram Reel 1",
+      type: "instagram_reel",
+   },
+   {
+      mediaUrl: "https://www.instagram.com/reel/Cup6wDJJJ9J/",
+      title: "Instagram Reel 2",
+      details: "Details for Instagram Reel 2",
+      type: "instagram_reel",
+   },
+   {
+      mediaUrl: "https://www.instagram.com/reel/CvxmhLhJ3l8/",
+      title: "Instagram Reel 3",
+      details: "Details for Instagram Reel 3",
+      type: "instagram_reel",
+   },
+
+   {
+      mediaUrl: "https://www.tiktok.com/t/ZT8SYd4Q7/",
+      title: "TikTok Video 1",
+      details: "Details for TikTok Video 1",
+      type: "tiktok",
+   },
+   {
+      mediaUrl: "https://www.tiktok.com/t/ZT8SYRCLx/",
+      title: "TikTok Video 2",
+      details: "Details for TikTok Video 2",
+      type: "tiktok",
+   },
 ];
 
 const renderMedia = (project) => {
@@ -69,9 +95,6 @@ const renderMedia = (project) => {
             Your browser does not support the video tag.
          </video>
       );
-      {
-         /* YouTube Shorts Section */
-      }
    } else if (project.type === "youtube_short") {
       return (
          <iframe
@@ -80,18 +103,8 @@ const renderMedia = (project) => {
             width="100%"
             height="352"
             src={project.mediaUrl}
-            allowFullScreen=""
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-         ></iframe>
-      );
-   } else if (project.type === "tiktok") {
-      return (
-         <iframe
-            title="TikTok Widget"
-            width="200"
-            height="400"
-            src={project.mediaUrl}
-            allowFullScreen=""
+            allowFullScreen
          ></iframe>
       );
    } else if (project.type === "audio") {
@@ -99,92 +112,192 @@ const renderMedia = (project) => {
    } else if (project.type === "iframe") {
       return (
          <iframe
-            title="Spotify Widget - Portfolio 1"
+            title={project.title}
             style={{ borderRadius: "12px" }}
             width="100%"
             height="352"
             src={project.mediaUrl}
-            allowFullScreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
          ></iframe>
       );
+   } else if (project.type === "instagram_reel") {
+      // Placeholder for Instagram embeds - the actual content will be rendered by Instagram's script
+      return (
+         <blockquote
+            className="instagram-media"
+            data-instgrm-permalink={project.mediaUrl}
+            data-instgrm-version="14"
+            style={{
+               maxWidth: "540px",
+               minWidth: "326px",
+               width: "calc(100% - 2px)",
+            }}
+         >
+            {/* Placeholder content, actual embed will be rendered by the script */}
+         </blockquote>
+      );
    }
+   return null;
 };
-
-const HomePage = () => (
-   <div className="home">
-      <div className="services-overview">
-         <h2>SERVICES WE OFFER</h2>
-         <div className="services-container">
-            <div className="services-list">
-               <ul>
-                  <li>FULL PODCAST PRODUCTION</li>
-                  <li>SHORT FORM CLIPS</li>
-                  <li>LONG FORM</li>
-                  <li>AUDIO</li>
-                  <li>PROJECT MANAGEMENT</li>
-                  <li>TIKTOK VIDEO EDITING</li>
-               </ul>
-            </div>
-            <div className="explore-services-btn-container">
-               <button
-                  className="explore-services-btn"
-                  onClick={() => (window.location.href = "/services")}
-               >
-                  SEE ALL OF OUR SERVICES!
-               </button>
-               <img
-                  src={videoEditorImage2}
-                  alt="Service Overview"
-                  className="services-overview-image"
-               />
-            </div>
-         </div>
-      </div>
-
-      <div className="portfolio">
-         <h2>A LITTLE TASTE OF WHAT WE DO</h2>
-         {/* Use the new PodcastSection component */}
-         <PodcastSection projects={projects} renderMedia={renderMedia} />
-         {/* Use the new YouTubeShortsSection component */}
-         <YouTubeShortsSection projects={projects} renderMedia={renderMedia} />
-      </div>
-
-      <div className="contact-section">
-         <div className="contact-text">
-            GET IN TOUCH WITH US US ANYTIME AT INFO@CLOSEDMONDAY.MEDIA
-         </div>
+const LogosSection = () => (
+   <div className="logos-section">
+      <a
+         href="https://www.youtube.com"
+         target="_blank"
+         rel="noopener noreferrer"
+      >
          <img
-            src={videoEditorImage}
-            alt="Video Editor"
-            className="editor-image"
+            src={youtubeShortsLogo}
+            alt="YouTube Shorts Logo"
+            className="logo"
          />
-         <div className="contact-info">
-            <p>GOT A PROJECT IN MIND?</p>
-            <p>LET'S TALK AND TURN YOUR VISION INTO REALITY.</p>
-            <p>REACH OUT TO US AND GET YOUR QUOTE TODAY!</p>
-         </div>
-      </div>
-
-      <div className="collaborators-section">
-         <h2 className="buddies">OUR COLLABORATORS</h2>
-         <div className="collaborators-container">
-            <div className="collaborator">
-               <img src="path/to/temporary/image1.png" alt="Collaborator 1" />
-               <p>Collaborator Name 1</p>
-            </div>
-            <div className="collaborator">
-               <img src="path/to/temporary/image2.png" alt="Collaborator 2" />
-               <p>Collaborator Name 2</p>
-            </div>
-            <div className="collaborator">
-               <img src="path/to/temporary/image3.png" alt="Collaborator 3" />
-               <p>Collaborator Name 3</p>
-            </div>
-         </div>
-      </div>
+      </a>
+      <a
+         href="https://www.instagram.com"
+         target="_blank"
+         rel="noopener noreferrer"
+      >
+         <img
+            src={instagramReelsLogo}
+            alt="Instagram Reels Logo"
+            className="logo"
+         />
+      </a>
+      <a
+         href="https://www.tiktok.com"
+         target="_blank"
+         rel="noopener noreferrer"
+      >
+         <img src={tiktokLogo} alt="TikTok Logo" className="logo" />
+      </a>
    </div>
 );
+
+const HomePage = () => {
+   useEffect(() => {
+      const scripts = [
+         { src: "https://www.instagram.com/embed.js", id: "instagram-script" },
+      ];
+
+      scripts.forEach(({ src, id }) => {
+         if (!document.getElementById(id)) {
+            const script = document.createElement("script");
+            script.src = src;
+            script.id = id;
+            script.async = true;
+            document.body.appendChild(script);
+         }
+      });
+
+      return () => {
+         scripts.forEach(({ id }) => {
+            const scriptElement = document.getElementById(id);
+            if (scriptElement) {
+               scriptElement.remove();
+            }
+         });
+      };
+   }, []);
+
+   return (
+      <div className="home">
+         <div className="services-overview">
+            <h2>SERVICES WE OFFER</h2>
+            <div className="services-container">
+               <div className="services-list">
+                  <ul>
+                     <li>PODCAST PRODUCTION</li>
+                     <li>AUDIO</li>
+                     <li>SHORT FORM CLIPS</li>
+                     <li>LONG FORM</li>
+                     <li>PROJECT MANAGEMENT</li>
+                     <li>TIKTOK , SHORTS , REELS</li>
+                  </ul>
+               </div>
+               <div className="explore-services-btn-container">
+                  <button
+                     className="explore-services-btn"
+                     onClick={() => (window.location.href = "/services")}
+                  >
+                     SEE ALL OF OUR SERVICES!
+                  </button>
+                  <img
+                     src={videoEditorImage2}
+                     alt="Service Overview"
+                     className="services-overview-image"
+                  />
+               </div>
+            </div>
+         </div>
+
+         <div className="portfolio">
+            <h2>A LITTLE TASTE OF WHAT WE DO</h2>
+            {/* Filter and pass only iframe type projects to PodcastSection */}
+            <PodcastSection
+               projects={projects.filter((p) => p.type === "iframe")}
+               renderMedia={renderMedia}
+            />
+            {/* Filter and pass only youtube_short type projects to YouTubeShortsSection */}
+            <YouTubeShortsSection
+               projects={projects.filter((p) => p.type === "youtube_short")}
+               renderMedia={renderMedia}
+            />
+            {/* Filter and pass only instagram_reel type projects to InstagramReelsSection */}
+            <InstagramReelsSection
+               projects={projects.filter((p) => p.type === "instagram_reel")}
+               renderMedia={renderMedia}
+            />
+            {/* Filter and pass only tiktok type projects to TikTokSection */}
+         </div>
+
+         {/* Logos Section */}
+         <LogosSection />
+
+         <div className="collaborators-section">
+            <h2 className="buddies">OUR COLLABORATORS</h2>
+            <div className="collaborators-container">
+               <div className="collaborator">
+                  <img
+                     src="path/to/temporary/image1.png"
+                     alt="Collaborator 1"
+                  />
+                  <p>Collaborator Name 1</p>
+               </div>
+               <div className="collaborator">
+                  <img
+                     src="path/to/temporary/image2.png"
+                     alt="Collaborator 2"
+                  />
+                  <p>Collaborator Name 2</p>
+               </div>
+               <div className="collaborator">
+                  <img
+                     src="path/to/temporary/image3.png"
+                     alt="Collaborator 3"
+                  />
+                  <p>Collaborator Name 3</p>
+               </div>
+            </div>
+         </div>
+
+         <div className="contact-section">
+            <div className="contact-text">
+               TALK TO US AT INFO@CLOSEDMONDAY.MEDIA
+            </div>
+            <img
+               src={videoEditorImage}
+               alt="Video Editor"
+               className="editor-image"
+            />
+            <div className="contact-info">
+               <p>GOT A PROJECT IN MIND?</p>
+               <p>LET'S TALK AND TURN YOUR VISION INTO REALITY.</p>
+               <p>REACH OUT TO US AND GET YOUR QUOTE TODAY!</p>
+            </div>
+         </div>
+      </div>
+   );
+};
 
 export default HomePage;

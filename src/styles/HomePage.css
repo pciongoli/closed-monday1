@@ -286,7 +286,6 @@ img {
 .collaborators-section {
    /* text-align: center; */
    padding: 20px;
-   background-color: #f9f9f9; /* Example background color */
 }
 
 .collaborators-container {
@@ -319,6 +318,37 @@ img {
    align-items: left;
 }
 
+/* Add this to your HomePage.css file */
+
+.logos-section {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin-top: 20px; /* Adjust the margin as needed */
+   flex-wrap: wrap; /* Allows logos to wrap to next line on small screens */
+}
+
+.logos-section .logo {
+   margin: 0 15px; /* Spacing between logos */
+   width: 100px; /* Adjust width as needed */
+   height: auto; /* Maintain aspect ratio */
+   transition: transform 0.3s ease-in-out;
+}
+
+.logos-section .logo:hover {
+   transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Remove the column direction for smaller screens */
+@media (max-width: 768px) {
+   .logos-section {
+      /* Removed the flex-direction: column; */
+   }
+
+   .logos-section .logo {
+      margin: 10px; /* Adjust margin for smaller screens */
+   }
+}
 @media only screen and (max-width: 600px) {
    .services-list ul {
       display: flex;

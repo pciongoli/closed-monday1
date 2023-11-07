@@ -23,10 +23,10 @@ const NavBar = () => {
          {/* The nav-links should toggle visibility */}
          <ul className={`nav-links ${isOpen ? "show" : ""}`}>
             <li>
-               <Link to="/services">Services</Link>
+               <Link to="/services">SERVICES</Link>
             </li>
             <li>
-               <Link to="/contact">Contact</Link>
+               <Link to="/contact">CONTACT</Link>
             </li>
          </ul>
       </nav>
