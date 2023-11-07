@@ -45,11 +45,6 @@ const projects = [
    },
    ,
    {
-      mediaUrl: "https://www.youtube.com/embed/bTi_OD9R1ZE",
-      title: "YouTube Short 1",
-      type: "youtube_short",
-   },
-   {
       mediaUrl: "https://www.youtube.com/embed/tN6iz9P6A3c",
       title: "YouTube Short 2",
       type: "youtube_short",
@@ -149,7 +144,7 @@ const HomePage = () => (
       </div>
 
       <div className="portfolio">
-         <h2>Portfolio</h2>
+         <h2>A little taste of what we do</h2>
          {/* Use the new PodcastSection component */}
          <PodcastSection projects={projects} renderMedia={renderMedia} />
          {/* Use the new YouTubeShortsSection component */}
