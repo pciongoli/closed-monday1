@@ -1,6 +1,7 @@
 .home {
    font-weight: 300;
    max-width: 950px;
+   margin: 0 auto;
 }
 
 .introduction {
@@ -72,7 +73,6 @@ eviews-section {
    flex-direction: column;
    justify-content: center;
    overflow: auto;
-   align-items: flex-start;
    margin-top: 38px;
    padding: 19px;
    border-radius: 5px;
@@ -145,7 +145,7 @@ img {
 .services-overview ul li {
    float: left;
    width: 48%;
-   font-size: 1.3299999999999998em;
+   font-size: 1.06em;
    font-weight: bold;
    padding: 9.5px 15px;
    margin-bottom: 9.5px;
@@ -198,19 +198,14 @@ img {
    margin: 0 auto;
    font-size: 0.95em;
 }
-.introduction,
-.services-overview,
-.contact-section {
-   max-width: 900px;
-   margin: 45.6px auto;
-}
+
 .services-overview,
 .contact-section {
    max-width: 900px;
    margin: 45.6px auto;
    padding: 0 8px;
    justify-content: center;
-   align-items: center;
+   /* align-items: center; */
    text-align: center;
 }
 .slick-dots li button:before,
@@ -286,6 +281,42 @@ img {
    margin-top: 20px;
    margin-bottom: 20px;
    max-width: 100%;
+}
+
+.collaborators-section {
+   /* text-align: center; */
+   padding: 20px;
+   background-color: #f9f9f9; /* Example background color */
+}
+
+.collaborators-container {
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+}
+
+.collaborator {
+   margin: 10px;
+   padding: 10px;
+   background-color: #ffffff; /* Example background color */
+   border-radius: 10px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.collaborator img {
+   width: 150px; /* Example width, adjust as needed */
+   height: 150px; /* Example height, adjust as needed */
+   border-radius: 50%;
+   margin-bottom: 10px;
+}
+
+.collaborator p {
+   margin: 0;
+   font-weight: bold;
+}
+
+.buddies {
+   align-items: left;
 }
 
 @media only screen and (max-width: 600px) {
@@ -364,6 +395,7 @@ img {
    .services-overview h2 {
       margin-bottom: 10px;
       font-size: 1.5rem;
+      margin-top: 50px;
    }
 }
 @media (max-width: 576px) {
