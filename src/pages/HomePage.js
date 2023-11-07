@@ -151,10 +151,6 @@ const HomePage = () => (
          <YouTubeShortsSection projects={projects} renderMedia={renderMedia} />
       </div>
 
-      <div className="clients-section">
-         <h2>OUR COLLABORATORS</h2>
-      </div>
-
       <div className="contact-section">
          <div className="contact-text">TEXT US ANYTIME AT 200-CLOSEDMO</div>
          <img
