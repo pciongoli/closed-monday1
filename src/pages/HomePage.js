@@ -132,7 +132,7 @@ const HomePage = () => (
                   className="explore-services-btn"
                   onClick={() => (window.location.href = "/services")}
                >
-                  EXPLORE ALL OUR EXCITING SERVICES!
+                  SEE ALL OF OUR SERVICES!
                </button>
                <img
                   src={videoEditorImage2}
@@ -144,19 +144,17 @@ const HomePage = () => (
       </div>
 
       <div className="portfolio">
-         <h2>A little taste of what we do</h2>
+         <h2>A LITTLE TASTE OF WHAT WE DO</h2>
          {/* Use the new PodcastSection component */}
          <PodcastSection projects={projects} renderMedia={renderMedia} />
          {/* Use the new YouTubeShortsSection component */}
          <YouTubeShortsSection projects={projects} renderMedia={renderMedia} />
       </div>
 
-      <div className="clients-section">
-         <h2>OUR COLLABORATORS</h2>
-      </div>
-
       <div className="contact-section">
-         <div className="contact-text">TEXT US ANYTIME AT 200-CLOSEDMO</div>
+         <div className="contact-text">
+            GET IN TOUCH WITH US US ANYTIME AT INFO@CLOSEDMONDAY.MEDIA
+         </div>
          <img
             src={videoEditorImage}
             alt="Video Editor"
@@ -166,6 +164,24 @@ const HomePage = () => (
             <p>GOT A PROJECT IN MIND?</p>
             <p>LET'S TALK AND TURN YOUR VISION INTO REALITY.</p>
             <p>REACH OUT TO US AND GET YOUR QUOTE TODAY!</p>
+         </div>
+      </div>
+
+      <div className="collaborators-section">
+         <h2 className="buddies">OUR COLLABORATORS</h2>
+         <div className="collaborators-container">
+            <div className="collaborator">
+               <img src="path/to/temporary/image1.png" alt="Collaborator 1" />
+               <p>Collaborator Name 1</p>
+            </div>
+            <div className="collaborator">
+               <img src="path/to/temporary/image2.png" alt="Collaborator 2" />
+               <p>Collaborator Name 2</p>
+            </div>
+            <div className="collaborator">
+               <img src="path/to/temporary/image3.png" alt="Collaborator 3" />
+               <p>Collaborator Name 3</p>
+            </div>
          </div>
       </div>
    </div>
