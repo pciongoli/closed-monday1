@@ -1,6 +1,7 @@
 .home {
-   font-weight: 300;
+   font-weight: 280;
    max-width: 950px;
+   margin: 0 auto;
 }
 
 .introduction {
@@ -49,47 +50,29 @@ eviews-section {
    text-align: center;
 }
 
+.services-overview {
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+   overflow: auto;
+   margin-top: 38px;
+   padding: 19px;
+   border-radius: 5px;
+}
+
 .services-list ul li {
    min-width: 250px;
    /* Adjust the value as needed to prevent text wrapping */
    display: block;
-   text-align: center;
    /* Center text within li */
 }
+
 .services-overview h2 {
    font-weight: bold;
    margin-bottom: 19px;
    text-align: left;
    /* Align to the left on all screens */
    margin-left: 20px;
-   /* Provide some space from the left edge */
-}
-
-.services-overview {
-   display: flex;
-   flex-wrap: wrap;
-
-   flex-direction: column;
-   justify-content: center;
-   overflow: auto;
-   align-items: flex-start;
-   margin-top: 38px;
-   padding: 19px;
-   border-radius: 5px;
-}
-
-.services-overview ul {
-   list-style-type: disc;
-   margin-left: 38px;
-}
-
-.services-container {
-   display: flex;
-   /* align-items: start; */
-}
-.explore-services-btn,
-.services-overview-image {
-   margin-left: auto;
 }
 
 .services-overview-image {
@@ -145,7 +128,7 @@ img {
 .services-overview ul li {
    float: left;
    width: 48%;
-   font-size: 1.3299999999999998em;
+   font-size: 1.1em;
    font-weight: bold;
    padding: 9.5px 15px;
    margin-bottom: 9.5px;
@@ -156,19 +139,7 @@ img {
    background-color: #e6e6e6;
    transform: scale(1.05);
 }
-.widgets-container {
-   overflow-x: auto;
-   white-space: nowrap;
-   scrollbar-width: thin;
-   scrollbar-color: #888 #f2f2f2;
-}
-.widgets-container::-webkit-scrollbar {
-   height: 8px;
-}
-.widgets-container::-webkit-scrollbar-thumb {
-   background-color: #888;
-   border-radius: 4px;
-}
+
 .explore-services-btn {
    background-color: #ff5733;
    color: #ffffff;
@@ -286,6 +257,54 @@ img {
    margin-top: 20px;
    margin-bottom: 20px;
    max-width: 100%;
+}
+
+/* Our Buddies section styles */
+.our-buddies {
+   text-align: center;
+   margin: 50px 0;
+}
+
+.our-buddies h2 {
+   font-size: 2em;
+   margin-bottom: 30px;
+   text-align: left;
+}
+
+.buddies-list {
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+}
+
+.buddy {
+   width: 30%;
+   margin-bottom: 30px;
+   text-decoration: none;
+   color: inherit; /* Keeps the text color from changing when inside a link */
+}
+
+.buddy img {
+   width: 100%;
+   height: auto;
+   border-radius: 10px; /* Gives images rounded corners */
+}
+
+.buddy h3 {
+   margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+   .buddy {
+      width: 45%; /* Increase width for smaller screens */
+   }
+}
+
+@media (max-width: 480px) {
+   .buddy {
+      width: 100%; /* Full width on very small screens */
+   }
 }
 
 @media only screen and (max-width: 600px) {

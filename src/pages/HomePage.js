@@ -168,6 +168,42 @@ const HomePage = () => (
             <p>REACH OUT TO US AND GET YOUR QUOTE TODAY!</p>
          </div>
       </div>
+
+      <div className="our-buddies">
+         <h2>Our Buddies</h2>
+         <div className="buddies-list">
+            <a
+               href="http://johnnydrinks.com"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="buddy"
+            >
+               <img src="path_to_johnny_drinks_image.jpg" alt="Johnny Drinks" />
+               <h3>Johnny Drinks</h3>
+            </a>
+            <a
+               href="http://undertheinfluence.com"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="buddy"
+            >
+               <img
+                  src="path_to_under_the_influence_image.jpg"
+                  alt="Under the Influence"
+               />
+               <h3>Under the Influence</h3>
+            </a>
+            <a
+               href="http://suburbtalks.com"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="buddy"
+            >
+               <img src="path_to_suburb_talks_image.jpg" alt="Suburb Talks" />
+               <h3>Suburb Talks</h3>
+            </a>
+         </div>
+      </div>
    </div>
 );
 
