@@ -60,12 +60,9 @@ const HomePage = () => {
                            to life.
                         </p>
                      </div>
-                     <button
-                        className="learn-more-btn"
-                        onClick={() => (window.location.href = "/services")}
-                     >
+                     <a href="/services" className="learn-more-btn">
                         LEARN MORE
-                     </button>
+                     </a>
                   </div>
                   <div className="service">
                      <span
@@ -81,12 +78,9 @@ const HomePage = () => {
                            Clear and crisp audio editing for all your projects.
                         </p>
                      </div>
-                     <button
-                        className="learn-more-btn"
-                        onClick={() => (window.location.href = "/services")}
-                     >
+                     <a href="/services" className="learn-more-btn">
                         LEARN MORE
-                     </button>
+                     </a>
                   </div>
                   <div className="service">
                      <span
@@ -103,12 +97,9 @@ const HomePage = () => {
                            Shorts.
                         </p>
                      </div>
-                     <button
-                        className="learn-more-btn"
-                        onClick={() => (window.location.href = "/services")}
-                     >
+                     <a href="/services" className="learn-more-btn">
                         LEARN MORE
-                     </button>
+                     </a>
                   </div>
                   <div className="service">
                      <span
@@ -125,12 +116,9 @@ const HomePage = () => {
                            heard.
                         </p>
                      </div>
-                     <button
-                        className="learn-more-btn"
-                        onClick={() => (window.location.href = "/services")}
-                     >
+                     <a href="/services" className="learn-more-btn">
                         LEARN MORE
-                     </button>
+                     </a>
                   </div>
                </div>
                <div className="services-image-container">
