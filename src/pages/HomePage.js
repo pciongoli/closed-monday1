@@ -64,7 +64,7 @@ const HomePage = () => {
                         className="learn-more-btn"
                         onClick={() => (window.location.href = "/services")}
                      >
-                        Learn More
+                        LEARN MORE
                      </button>
                   </div>
                   <div className="service">
@@ -85,7 +85,7 @@ const HomePage = () => {
                         className="learn-more-btn"
                         onClick={() => (window.location.href = "/services")}
                      >
-                        Learn More
+                        LEARN MORE
                      </button>
                   </div>
                   <div className="service">
@@ -97,7 +97,7 @@ const HomePage = () => {
                         📱
                      </span>
                      <div className="service-text">
-                        <h3>Social Media Content</h3>
+                        <h3>SOCIAL MEDIA CONTENT</h3>
                         <p>
                            Engaging and creative edits for TikToks, Reels, and
                            Shorts.
@@ -107,7 +107,7 @@ const HomePage = () => {
                         className="learn-more-btn"
                         onClick={() => (window.location.href = "/services")}
                      >
-                        Learn More
+                        LEARN MORE
                      </button>
                   </div>
                   <div className="service">
@@ -119,7 +119,7 @@ const HomePage = () => {
                         🎙️
                      </span>
                      <div className="service-text">
-                        <h3>Podcasts</h3>
+                        <h3>PODCASTS</h3>
                         <p>
                            Comprehensive editing to ensure your message is
                            heard.
@@ -129,7 +129,7 @@ const HomePage = () => {
                         className="learn-more-btn"
                         onClick={() => (window.location.href = "/services")}
                      >
-                        Learn More
+                        LEARN MORE
                      </button>
                   </div>
                </div>

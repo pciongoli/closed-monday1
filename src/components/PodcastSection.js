@@ -3,7 +3,7 @@ import "../styles/PortfolioPage.css";
 
 const PodcastSection = ({ projects, renderMedia }) => (
    <section id="podcasts">
-      <h2>Podcasts</h2>
+      <h2>PODCASTS</h2>
       <div className="projects">
          {projects
             .filter((p) => p.type === "iframe")

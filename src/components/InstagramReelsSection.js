@@ -3,7 +3,7 @@ import "../styles/PortfolioPage.css";
 
 const InstagramReelsSection = ({ projects, renderMedia }) => (
    <section id="instagram-reels">
-      <h2>Instagram Reels</h2>
+      <h2>INSTAGRAM REELS</h2>
       <div className="projects">
          {projects
             .filter((p) => p.type === "instagram_reel")

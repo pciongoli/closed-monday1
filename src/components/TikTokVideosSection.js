@@ -4,7 +4,7 @@ import "../styles/PortfolioPage.css"; // Assuming TikTok styles are here
 
 const TikTokVideosSection = ({ projects, renderMedia }) => (
    <section id="tiktok-videos">
-      <h2>TikTok Videos</h2>
+      <h2>TIKTOK VIDEOS</h2>
       <div className="projects">
          {projects
             .filter((p) => p.type === "tiktok_video")
