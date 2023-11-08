@@ -3,6 +3,7 @@ import React from "react";
 import instagramReelsLogo from "../assets/image/instagram-reels-logo.png"; // Update the import paths as necessary
 import tiktokLogo from "../assets/image/tiktok-logo.png";
 import youtubeShortsLogo from "../assets/image/youtube-shorts-logo.png";
+import spotifyLogo from "../assets/image/spotify-logo.png";
 
 const LogoSection = () => (
    <div className="logos-section">
@@ -34,6 +35,13 @@ const LogoSection = () => (
          rel="noopener noreferrer"
       >
          <img src={tiktokLogo} alt="TikTok Logo" className="logo" />
+      </a>
+      <a
+         href="https://www.spotify.com"
+         target="_blank"
+         rel="noopener noreferrer"
+      >
+         <img src={spotifyLogo} alt="YouTube Shorts Logo" className="logo" />
       </a>
    </div>
 );
