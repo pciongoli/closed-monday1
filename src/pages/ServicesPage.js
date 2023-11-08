@@ -1,5 +1,6 @@
 // src/pages/ServicesPage.js
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/ServicesPage.css";
 
 const ServicesPage = () => {
@@ -83,43 +84,28 @@ const ServicesPage = () => {
       <div className="services">
          <h1>Our Services</h1>
          {servicesData.map((service) => (
-            <Service
-               key={service.title}
-               data={service}
-               activeDropdown={activeDropdown}
-               setActiveDropdown={setActiveDropdown}
-            />
+            <Service key={service.title} data={service} />
          ))}
       </div>
    );
 };
 
-const Service = ({ data, activeDropdown, setActiveDropdown }) => {
+const Service = ({ data }) => {
    return (
-      <div
-         className="service-item"
-         onMouseEnter={() => setActiveDropdown(data.title)}
-         onMouseLeave={() => setActiveDropdown(null)}
-      >
-         <div className="icon">
-            <img
-               src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M3 22v-20l18 10-18 10z'></path></svg>"
-               alt={data.title}
-            />
-         </div>
+      <div className="service-item">
          <div className="service-content">
             <h2>{data.title}</h2>
             <p>{data.description}</p>
-            {activeDropdown === data.title && (
-               <div className="dropdown-content">
-                  <ul>
-                     {data.details.map((detail) => (
-                        <li key={detail}>{detail}</li>
-                     ))}
-                  </ul>
-                  <p className="price">{data.price}</p>
-               </div>
-            )}
+            <div className="dropdown-content">
+               <ul>
+                  {data.details.map((detail, index) => (
+                     <li key={index}>{detail}</li>
+                  ))}
+               </ul>
+               <Link to="/contact" className="quote-btn">
+                  Get a Quote!
+               </Link>
+            </div>
          </div>
       </div>
    );

@@ -13,6 +13,9 @@
 }
 
 .menu-icon {
+   position: absolute; /* Position menu icon absolutely */
+   left: 10px; /* Position to the left */
+
    z-index: 2000;
    font-size: 1.5rem;
    cursor: pointer;
