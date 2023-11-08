@@ -108,42 +108,42 @@ const projects = [
 
    {
       mediaUrl:
-         "https://www.tiktok.com/@undertheinfluence.show/video/7250111950212828458?_r=1&_t=8h29IqLH7Nu",
+         "https://www.tiktok.com/@undertheinfluence.show/video/7232422775192079662?_t=8h29EyGbWt0&_r=1",
       title: "TikTok Video 1",
       details: "Details for TikTok Video 1",
       type: "tiktok_video",
    },
    {
       mediaUrl:
-         "https://www.tiktok.com/@undertheinfluence.show/video/7259489230374718762?_r=1&_t=8h29NIVrNpm",
+         "https://www.tiktok.com/@undertheinfluence.show/video/7296577551827258667?_r=1&_t=8h2IGCBhRrH",
       title: "TikTok Video 2",
       details: "Details for TikTok Video 2",
       type: "tiktok_video",
    },
    {
       mediaUrl:
-         "https://www.tiktok.com/@undertheinfluence.show/video/7212799552053726507?_r=1&_t=8h29MBm4CMd",
+         "https://www.tiktok.com/@undertheinfluence.show/video/7250111950212828458?_r=1&_t=8h29IqLH7Nu",
       title: "TikTok Video 3",
       details: "Details for TikTok Video 3",
       type: "tiktok_video",
    },
    {
       mediaUrl:
-         "https://www.tiktok.com/@undertheinfluence.show/video/7289150678889450794?_r=1&_t=8h297AoO1S2",
+         "https://www.tiktok.com/@undertheinfluence.show/video/7259489230374718762?_r=1&_t=8h29NIVrNpm",
       title: "TikTok Video 4",
       details: "Details for TikTok Video 4",
       type: "tiktok_video",
    },
    {
       mediaUrl:
-         "https://www.tiktok.com/@undertheinfluence.show/video/7232422775192079662?_t=8h29EyGbWt0&_r=1",
+         "https://www.tiktok.com/@undertheinfluence.show/video/7212799552053726507?_r=1&_t=8h29MBm4CMd",
       title: "TikTok Video 5",
       details: "Details for TikTok Video 5",
       type: "tiktok_video",
    },
    {
       mediaUrl:
-         "https://www.tiktok.com/@undertheinfluence.show/video/7296577551827258667?_r=1&_t=8h2IGCBhRrH",
+         "https://www.tiktok.com/@undertheinfluence.show/video/7289150678889450794?_r=1&_t=8h297AoO1S2",
       title: "TikTok Video 6",
       details: "Details for TikTok Video 6",
       type: "tiktok_video",
@@ -323,9 +323,9 @@ const HomePage = () => {
 
          <div className="portfolio">
             <h2>A LITTLE TASTE OF WHAT WE DO</h2>
-            {/* Filter and pass only youtube_short type projects to YouTubeShortsSection */}
-            <YouTubeShortsSection
-               projects={projects.filter((p) => p.type === "youtube_short")}
+            {/* Filter and pass only tiktok type projects to TikTokSection */}
+            <TikTokVideosSection
+               projects={projects.filter((p) => p.type === "tiktok_video")}
                renderMedia={renderMedia}
             />
             {/* Filter and pass only instagram_reel type projects to InstagramReelsSection */}
@@ -333,9 +333,9 @@ const HomePage = () => {
                projects={projects.filter((p) => p.type === "instagram_reel")}
                renderMedia={renderMedia}
             />
-            {/* Filter and pass only tiktok type projects to TikTokSection */}
-            <TikTokVideosSection
-               projects={projects.filter((p) => p.type === "tiktok_video")}
+            {/* Filter and pass only youtube_short type projects to YouTubeShortsSection */}
+            <YouTubeShortsSection
+               projects={projects.filter((p) => p.type === "youtube_short")}
                renderMedia={renderMedia}
             />
             {/* Filter and pass only iframe type projects to PodcastSection */}
