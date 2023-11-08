@@ -2,6 +2,7 @@
    font-weight: 300;
    max-width: 950px;
    margin: 0 auto;
+   padding-top: 30px;
 }
 
 .introduction {
@@ -242,6 +243,9 @@ img {
    }
 }
 
+/*  */
+/*  */
+
 .services-overview {
    display: flex;
    flex-direction: column;
@@ -301,8 +305,6 @@ img {
 }
 
 .learn-more-btn {
-   opacity: 0;
-   visibility: hidden;
    position: static;
    padding: 8px 16px;
    border: none;
@@ -311,6 +313,8 @@ img {
    color: #000;
    cursor: pointer;
    transition: opacity 0.3s ease, visibility 0.3s ease;
+   opacity: 1; /* Set opacity to 1 to make it always visible */
+   visibility: visible;
 }
 
 .service:hover .learn-more-btn {
@@ -349,7 +353,11 @@ img {
    }
 
    .services-image-container {
-      order: 0; /* Reset order for larger screens */
+      order: 1; /* Changed order for larger screens to make it appear first */
       align-self: auto; /* Default alignment */
+   }
+
+   .services-container {
+      order: 2; /* Changed order for larger screens to make it appear second */
    }
 }

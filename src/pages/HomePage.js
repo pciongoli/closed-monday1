@@ -43,7 +43,6 @@ const HomePage = () => {
    return (
       <div className="home">
          <div className="services-overview">
-            <h2>Our Services</h2>
             <div className="services-content-wrapper">
                <div className="services-container">
                   <div className="service">
@@ -55,7 +54,7 @@ const HomePage = () => {
                         🎬
                      </span>
                      <div className="service-text">
-                        <h3>Video Editing</h3>
+                        <h3>VIDEO EDITING</h3>
                         <p>
                            Full production video services to bring your vision
                            to life.
@@ -77,7 +76,7 @@ const HomePage = () => {
                         🎧
                      </span>
                      <div className="service-text">
-                        <h3>Audio Editing</h3>
+                        <h3>AUDIO EDITING</h3>
                         <p>
                            Clear and crisp audio editing for all your projects.
                         </p>
@@ -146,19 +145,21 @@ const HomePage = () => {
          ;
          <div className="portfolio">
             <h2>A LITTLE TASTE OF WHAT WE DO</h2>
-            {/* Filter and pass only tiktok type projects to TikTokSection */}
-            <TikTokVideosSection
-               projects={projects.filter((p) => p.type === "tiktok_video")}
+            {/* Filter and pass only youtube_short type projects to YouTubeShortsSection */}
+            <YouTubeShortsSection
+               projects={projects.filter((p) => p.type === "youtube_short")}
                renderMedia={renderMedia}
             />
+
             {/* Filter and pass only instagram_reel type projects to InstagramReelsSection */}
             <InstagramReelsSection
                projects={projects.filter((p) => p.type === "instagram_reel")}
                renderMedia={renderMedia}
             />
-            {/* Filter and pass only youtube_short type projects to YouTubeShortsSection */}
-            <YouTubeShortsSection
-               projects={projects.filter((p) => p.type === "youtube_short")}
+
+            {/* Filter and pass only tiktok type projects to TikTokSection */}
+            <TikTokVideosSection
+               projects={projects.filter((p) => p.type === "tiktok_video")}
                renderMedia={renderMedia}
             />
             {/* Filter and pass only iframe type projects to PodcastSection */}

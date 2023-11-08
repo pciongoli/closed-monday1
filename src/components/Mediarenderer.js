@@ -64,6 +64,8 @@ export const renderMedia = (project) => {
             cite={project.mediaUrl}
             data-video-id={project.mediaUrl.split("/").pop()}
             style={{ maxWidth: "605px", minWidth: "325px" }}
+            muted
+            autoplay="0"
          >
             <section>
                <a
