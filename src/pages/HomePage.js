@@ -116,5 +116,4 @@ const HomePage = () => {
    );
 };
 
-<ServicesOverview />;
 export default HomePage;
