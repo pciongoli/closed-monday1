@@ -28,7 +28,7 @@ ul {
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
    .careers-container {
-      padding: 20px;
+      padding: 40px 20px 20px 20px;
    }
 }
 
