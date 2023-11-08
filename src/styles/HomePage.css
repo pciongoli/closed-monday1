@@ -326,6 +326,7 @@ img {
    align-items: center;
    margin-top: 20px; /* Adjust the margin as needed */
    flex-wrap: wrap; /* Allows logos to wrap to next line on small screens */
+   padding: 20px 10px 50px 10px;
 }
 
 .logos-section .logo {

@@ -5,6 +5,7 @@ import videoEditorImage2 from "../assets/image/video-editor-img3.png";
 import PodcastSection from "../components/PodcastSection";
 import YouTubeShortsSection from "../components/YouTubeShortsSection";
 import InstagramReelsSection from "../components/InstagramReelsSection";
+import TikTokVideosSection from "../components/TikTokVideosSection";
 import instagramReelsLogo from "../assets/image/instagram-reels-logo.png";
 import tiktokLogo from "../assets/image/tiktok-logo.png";
 import youtubeShortsLogo from "../assets/image/youtube-shorts-logo.png";
@@ -74,26 +75,35 @@ const projects = [
    },
 
    {
-      mediaUrl: "https://www.tiktok.com/t/ZT8SYd4Q7/",
+      mediaUrl:
+         "https://www.tiktok.com/@undertheinfluence.show/video/7250111950212828458?_r=1&_t=8h29IqLH7Nu",
       title: "TikTok Video 1",
       details: "Details for TikTok Video 1",
-      type: "tiktok",
+      type: "tiktok_video",
    },
    {
-      mediaUrl: "https://www.tiktok.com/t/ZT8SYRCLx/",
+      mediaUrl:
+         "https://www.tiktok.com/@undertheinfluence.show/video/7212799552053726507?_r=1&_t=8h29MBm4CMd",
       title: "TikTok Video 2",
       details: "Details for TikTok Video 2",
-      type: "tiktok",
+      type: "tiktok_video",
    },
 ];
 
 const renderMedia = (project) => {
    if (project.type === "video") {
       return (
-         <video controls>
-            <source src={project.mediaUrl} type="video/mp4" />
-            Your browser does not support the video tag.
-         </video>
+         <>
+            <TikTokVideosSection
+               projects={projects}
+               renderMedia={renderMedia}
+            />
+
+            <video controls>
+               <source src={project.mediaUrl} type="video/mp4" />
+               Your browser does not support the video tag.
+            </video>
+         </>
       );
    } else if (project.type === "youtube_short") {
       return (
@@ -137,6 +147,25 @@ const renderMedia = (project) => {
             {/* Placeholder content, actual embed will be rendered by the script */}
          </blockquote>
       );
+   } else if (project.type === "tiktok_video") {
+      // Use the provided embed code directly instead of iframe
+      return (
+         <blockquote
+            className="tiktok-embed"
+            cite={project.mediaUrl}
+            data-video-id={project.mediaUrl.split("/").pop()}
+            style={{ maxWidth: "605px", minWidth: "325px" }}
+         >
+            {/* This section should replicate the structure provided by TikTok's embed code */}
+            <section>
+               <a target="_blank" href={project.mediaUrl.split("?")[0]}>
+                  {project.title}
+               </a>
+               <p>{project.details}</p>
+               {/* Include other elements as per the original embed code if necessary */}
+            </section>
+         </blockquote>
+      );
    }
    return null;
 };
@@ -178,6 +207,7 @@ const HomePage = () => {
    useEffect(() => {
       const scripts = [
          { src: "https://www.instagram.com/embed.js", id: "instagram-script" },
+         { src: "https://www.tiktok.com/embed.js", id: "tiktok-script" }, // Add this line for TikTok
       ];
 
       scripts.forEach(({ src, id }) => {
@@ -233,11 +263,6 @@ const HomePage = () => {
 
          <div className="portfolio">
             <h2>A LITTLE TASTE OF WHAT WE DO</h2>
-            {/* Filter and pass only iframe type projects to PodcastSection */}
-            <PodcastSection
-               projects={projects.filter((p) => p.type === "iframe")}
-               renderMedia={renderMedia}
-            />
             {/* Filter and pass only youtube_short type projects to YouTubeShortsSection */}
             <YouTubeShortsSection
                projects={projects.filter((p) => p.type === "youtube_short")}
@@ -249,6 +274,15 @@ const HomePage = () => {
                renderMedia={renderMedia}
             />
             {/* Filter and pass only tiktok type projects to TikTokSection */}
+            <TikTokVideosSection
+               projects={projects.filter((p) => p.type === "tiktok_video")}
+               renderMedia={renderMedia}
+            />
+            {/* Filter and pass only iframe type projects to PodcastSection */}
+            <PodcastSection
+               projects={projects.filter((p) => p.type === "iframe")}
+               renderMedia={renderMedia}
+            />
          </div>
 
          {/* Logos Section */}
