@@ -1,3 +1,4 @@
+/* HomePage.css */
 .home {
    font-weight: 300;
    max-width: 950px;
@@ -115,7 +116,7 @@ img {
    margin: 45.6px auto;
    padding: 0 8px;
    justify-content: center;
-   /* align-items: center; */
+
    text-align: center;
 }
 .slick-dots li button:before,
@@ -149,7 +150,6 @@ img {
 }
 
 .collaborators-section {
-   /* text-align: center; */
    padding: 20px;
 }
 
@@ -162,14 +162,14 @@ img {
 .collaborator {
    margin: 10px;
    padding: 10px;
-   background-color: #ffffff; /* Example background color */
+   background-color: #ffffff;
    border-radius: 10px;
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .collaborator img {
-   width: 150px; /* Example width, adjust as needed */
-   height: 150px; /* Example height, adjust as needed */
+   width: 150px;
+   height: 150px;
    border-radius: 50%;
    margin-bottom: 10px;
 }
@@ -183,36 +183,32 @@ img {
    align-items: left;
 }
 
-/* Add this to your HomePage.css file */
-
 .logos-section {
    display: flex;
    justify-content: space-around;
    align-items: center;
-   margin-top: 20px; /* Adjust the margin as needed */
-   flex-wrap: wrap; /* Allows logos to wrap to next line on small screens */
+   margin-top: 20px;
+   flex-wrap: wrap;
    padding: 20px 10px 50px 10px;
 }
 
 .logos-section .logo {
-   margin: 0 15px; /* Spacing between logos */
-   width: 100px; /* Adjust width as needed */
-   height: auto; /* Maintain aspect ratio */
+   margin: 0 15px;
+   width: 100px;
+   height: auto;
    transition: transform 0.3s ease-in-out;
 }
 
 .logos-section .logo:hover {
-   transform: scale(1.1); /* Slight zoom on hover */
+   transform: scale(1.1);
 }
 
-/* Remove the column direction for smaller screens */
 @media (max-width: 768px) {
    .logos-section {
-      /* Removed the flex-direction: column; */
    }
 
    .logos-section .logo {
-      margin: 10px; /* Adjust margin for smaller screens */
+      margin: 10px;
    }
 }
 @media only screen and (max-width: 600px) {
@@ -220,7 +216,6 @@ img {
       display: flex;
       flex-direction: column;
       align-items: center;
-      /* Center ul within its container */
    }
 }
 
@@ -243,9 +238,6 @@ img {
    }
 }
 
-/*  */
-/*  */
-
 .services-overview {
    display: flex;
    flex-direction: column;
@@ -257,13 +249,13 @@ img {
 
 .services-overview h2 {
    font-size: 1.5em;
-   margin-bottom: 20px; /* Provide some space between the header and the content */
+   margin-bottom: 20px;
 }
 
 .services-content-wrapper {
    display: flex;
-   flex-direction: column; /* Stack the children vertically on smaller screens */
-   gap: 20px; /* Space between the services and the image */
+   flex-direction: column;
+   gap: 20px;
 }
 
 .services-container {
@@ -275,8 +267,8 @@ img {
    display: flex;
    align-items: center;
    color: #000;
-   padding: 15px; /* Increased padding for more space between services */
-   margin-bottom: 20px; /* Increase space between each service */
+   padding: 15px;
+   margin-bottom: 20px;
    width: 100%;
    position: relative;
    overflow: hidden;
@@ -312,9 +304,16 @@ img {
    background-color: #fff;
    color: #000;
    cursor: pointer;
-   transition: opacity 0.3s ease, visibility 0.3s ease;
-   opacity: 1; /* Set opacity to 1 to make it always visible */
-   visibility: visible;
+   transition: all 0.3s ease;
+   outline: none;
+}
+
+.learn-more-btn:hover,
+.learn-more-btn:focus {
+   background-color: #f8f8f8;
+   color: #333;
+   transform: scale(1.01);
+   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 .service:hover .learn-more-btn {
@@ -324,40 +323,40 @@ img {
 
 .services-image-container {
    text-align: center;
-   width: 100%; /* Take up full width on smaller screens */
-   order: 2; /* Ensure the image appears after the services on smaller screens */
+   width: 100%;
+   order: 2;
 }
 
 .services-image {
-   max-width: 100%; /* Ensure the image is not bigger than its container */
+   max-width: 100%;
    height: auto;
 }
 
-/* Media query for tablet and desktop sizes */
 @media (min-width: 768px) {
    .services-content-wrapper {
-      flex-direction: row; /* Side by side on larger screens */
-      align-items: center; /* Center-align the children vertically */
-      justify-content: space-between; /* Add space between the services and the image */
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
    }
 
    .services-container,
    .services-image-container {
-      width: auto; /* Allow the width to auto adjust based on content */
-      flex: 1; /* Give them flexibility to grow */
+      width: auto;
+      flex: 1;
    }
 
    .service {
-      padding: 10px; /* Adjust padding for larger screens */
-      margin-bottom: 15px; /* Adjust spacing between services for larger screens */
+      padding: 10px;
+      margin-bottom: 15px;
    }
 
    .services-image-container {
-      order: 1; /* Changed order for larger screens to make it appear first */
-      align-self: auto; /* Default alignment */
+      order: 1;
+      align-self: auto;
    }
 
    .services-container {
-      order: 2; /* Changed order for larger screens to make it appear second */
+      order: 2;
+      padding-left: 20px;
    }
 }
