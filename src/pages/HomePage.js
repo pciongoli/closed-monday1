@@ -1,11 +1,11 @@
 // HomePage.js
 import React, { useEffect } from "react";
-import videoEditorImage from "../assets/image/video-editor-img2.png";
+import ServicesOverview from "../components/ServicesOverview";
 import PodcastSection from "../components/PodcastSection";
-import closedMondayImage from "../assets/image/Closedmonday.png"; // Adjust the path as necessary
 import YouTubeShortsSection from "../components/YouTubeShortsSection";
 import InstagramReelsSection from "../components/InstagramReelsSection";
 import TikTokVideosSection from "../components/TikTokVideosSection";
+import videoEditorImage from "../assets/image/video-editor-img2.png";
 import projects from "../components/ProjectsData";
 import { renderMedia } from "../components/Mediarenderer";
 import LogoSection from "../components/LogoSection";
@@ -42,95 +42,8 @@ const HomePage = () => {
 
    return (
       <div className="home">
-         <div className="services-overview">
-            <div className="services-content-wrapper">
-               <div className="services-container">
-                  <div className="service">
-                     <span
-                        className="service-icon"
-                        role="img"
-                        aria-label="Video Editing"
-                     >
-                        🎬
-                     </span>
-                     <div className="service-text">
-                        <h3>VIDEO EDITING</h3>
-                        <p>
-                           Full production video services to bring your vision
-                           to life.
-                        </p>
-                     </div>
-                     <a href="/services" className="learn-more-btn">
-                        LEARN MORE
-                     </a>
-                  </div>
-                  <div className="service">
-                     <span
-                        className="service-icon"
-                        role="img"
-                        aria-label="Audio Editing"
-                     >
-                        🎧
-                     </span>
-                     <div className="service-text">
-                        <h3>AUDIO EDITING</h3>
-                        <p>
-                           Clear and crisp audio editing for all your projects.
-                        </p>
-                     </div>
-                     <a href="/services" className="learn-more-btn">
-                        LEARN MORE
-                     </a>
-                  </div>
-                  <div className="service">
-                     <span
-                        className="service-icon"
-                        role="img"
-                        aria-label="Social Media Content"
-                     >
-                        📱
-                     </span>
-                     <div className="service-text">
-                        <h3>SOCIAL MEDIA CONTENT</h3>
-                        <p>
-                           Engaging and creative edits for TikToks, Reels, and
-                           Shorts.
-                        </p>
-                     </div>
-                     <a href="/services" className="learn-more-btn">
-                        LEARN MORE
-                     </a>
-                  </div>
-                  <div className="service">
-                     <span
-                        className="service-icon"
-                        role="img"
-                        aria-label="Podcasts"
-                     >
-                        🎙️
-                     </span>
-                     <div className="service-text">
-                        <h3>PODCASTS</h3>
-                        <p>
-                           Comprehensive editing to ensure your message is
-                           heard.
-                        </p>
-                     </div>
-                     <a href="/services" className="learn-more-btn">
-                        LEARN MORE
-                     </a>
-                  </div>
-               </div>
-               <div className="services-image-container">
-                  <img
-                     src={closedMondayImage}
-                     alt="Closed Monday"
-                     className="services-image"
-                  />
-               </div>
-            </div>
-         </div>
-         ;
+         {/* services overview section */}
+         <ServicesOverview />;
          <div className="portfolio">
             <h2>A LITTLE TASTE OF WHAT WE DO</h2>
             {/* Filter and pass only youtube_short type projects to YouTubeShortsSection */}
@@ -203,4 +116,5 @@ const HomePage = () => {
    );
 };
 
+<ServicesOverview />;
 export default HomePage;

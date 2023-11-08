@@ -1,0 +1,135 @@
+.services-overview {
+   display: flex;
+   flex-direction: column;
+   padding: 40px 40px 0px 40px;
+   color: #333;
+   max-width: 950px;
+   margin: 0 auto;
+}
+
+.services-overview h2 {
+   font-size: 1.5em;
+   margin-bottom: 20px;
+}
+
+.services-content-wrapper {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+.services-container {
+   display: flex;
+   flex-direction: column;
+}
+
+.service {
+   display: flex;
+   align-items: center;
+   color: #000;
+   padding: 15px;
+   margin-bottom: 20px;
+   width: 100%;
+   position: relative;
+   overflow: hidden;
+   transition: all 0.3s ease;
+}
+
+.service-icon {
+   font-size: 18px;
+   margin-right: 0.5rem;
+}
+
+.service-text {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   max-width: 328px;
+}
+
+.service h3 {
+   font-size: 18px;
+   margin: 0;
+}
+
+.service p {
+   font-size: 14px;
+   margin: 4px 0;
+}
+
+.learn-more-btn {
+   position: relative;
+   padding: 8px 16px;
+   border: none;
+   border-radius: 15px;
+   background-color: #fff;
+   color: #000;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   outline: none;
+   text-decoration: none;
+   max-width: 70px;
+   text-align: right;
+}
+
+.learn-more-btn:hover,
+.learn-more-btn:focus {
+   background-color: #f8f8f8;
+   color: #333;
+   transform: scale(1.01);
+   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.service:hover .learn-more-btn {
+   opacity: 1;
+   visibility: visible;
+}
+
+.services-image-container {
+   text-align: center;
+   width: 100%;
+   order: 2;
+}
+
+.services-image {
+   max-width: 100%;
+   height: auto;
+}
+
+@media (min-width: 768px) {
+   .services-content-wrapper {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   .services-container,
+   .services-image-container {
+      width: auto;
+      flex: 1;
+   }
+
+   .service {
+      padding: 10px;
+      margin-bottom: 15px;
+   }
+
+   .services-image-container {
+      order: 1;
+      align-self: auto;
+   }
+
+   .services-container {
+      order: 2;
+      padding-left: 20px;
+   }
+}
+
+@media only screen and (max-width: 768px) {
+   .services-container {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+}
