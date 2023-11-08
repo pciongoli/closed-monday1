@@ -1,206 +1,119 @@
 // HomePage.js
-import React from "react";
+import React, { useEffect } from "react";
+import ServicesOverview from "../components/ServicesOverview";
+import PodcastSection from "../components/PodcastSection";
+import YouTubeShortsSection from "../components/YouTubeShortsSection";
+import InstagramReelsSection from "../components/InstagramReelsSection";
+import TikTokVideosSection from "../components/TikTokVideosSection";
 import videoEditorImage from "../assets/image/video-editor-img2.png";
-import videoEditorImage2 from "../assets/image/video-editor-img3.png";
-import PodcastSection from "../components/PodcastSection"; // Corrected import path
-import YouTubeShortsSection from "../components/YouTubeShortsSection"; // Corrected import path
-import Slider from "react-slick";
+import projects from "../components/ProjectsData";
+import { renderMedia } from "../components/Mediarenderer";
+import LogoSection from "../components/LogoSection";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/HomePage.css";
 
-const settings = {
-   dots: true,
-   infinite: true,
-   speed: 500,
-   slidesToShow: 1,
-   slidesToScroll: 1,
-   autoplay: true,
-};
+const HomePage = () => {
+   useEffect(() => {
+      const scripts = [
+         { src: "https://www.instagram.com/embed.js", id: "instagram-script" },
+         { src: "https://www.tiktok.com/embed.js", id: "tiktok-script" },
+      ];
 
-const projects = [
-   {
-      mediaUrl:
-         "https://open.spotify.com/embed/show/7xuYMlfFAXUfReoHKGHjb6?utm_source=generator",
-      title: "JOHNNY DRINKS",
-      details: "Description for JOHNNY DRINKS...",
-      technicalDetails: "Technical details...",
-      type: "iframe",
-   },
-   {
-      mediaUrl:
-         "https://open.spotify.com/embed/show/5NDVTKGjiZhrth5hJbfvsA/video?utm_source=generator",
-      title: "UNDER THE INFLUENCE",
-      details: "Description for UNDER THE INFLUENCE...",
-      technicalDetails: "Technical details...",
-      type: "iframe",
-   },
-   {
-      mediaUrl:
-         "https://open.spotify.com/embed/show/4YLbUxILwRNN9e1UUCDV1D?utm_source=generator",
-      title: "SUBURB TALKS",
-      details: "Description for SUBURB TALKS...",
-      technicalDetails: "Technical details...",
-      type: "iframe",
-   },
-   ,
-   {
-      mediaUrl: "https://www.youtube.com/embed/tN6iz9P6A3c",
-      title: "YouTube Short 2",
-      type: "youtube_short",
-   },
-   {
-      mediaUrl: "https://www.youtube.com/embed/okyYbCBIwFo",
-      title: "YouTube Short 3",
-      type: "youtube_short",
-   },
-   {
-      mediaUrl: "https://www.youtube.com/embed/fPMvyeEZ9Hc",
-      title: "YouTube Short 4",
-      type: "youtube_short",
-   },
-];
+      scripts.forEach(({ src, id }) => {
+         if (!document.getElementById(id)) {
+            const script = document.createElement("script");
+            script.src = src;
+            script.id = id;
+            script.async = true;
+            document.body.appendChild(script);
+         }
+      });
 
-const renderMedia = (project) => {
-   if (project.type === "video") {
-      return (
-         <video controls>
-            <source src={project.mediaUrl} type="video/mp4" />
-            Your browser does not support the video tag.
-         </video>
-      );
-      {
-         /* YouTube Shorts Section */
-      }
-   } else if (project.type === "youtube_short") {
-      return (
-         <iframe
-            title={project.title}
-            style={{ borderRadius: "12px" }}
-            width="100%"
-            height="352"
-            src={project.mediaUrl}
-            allowFullScreen=""
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-         ></iframe>
-      );
-   } else if (project.type === "tiktok") {
-      return (
-         <iframe
-            title="TikTok Widget"
-            width="200"
-            height="400"
-            src={project.mediaUrl}
-            allowFullScreen=""
-         ></iframe>
-      );
-   } else if (project.type === "audio") {
-      return <audio controls src={project.mediaUrl}></audio>;
-   } else if (project.type === "iframe") {
-      return (
-         <iframe
-            title="Spotify Widget - Portfolio 1"
-            style={{ borderRadius: "12px" }}
-            width="100%"
-            height="352"
-            src={project.mediaUrl}
-            allowFullScreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-         ></iframe>
-      );
-   }
-};
+      return () => {
+         scripts.forEach(({ id }) => {
+            const scriptElement = document.getElementById(id);
+            if (scriptElement) {
+               scriptElement.remove();
+            }
+         });
+      };
+   }, []);
 
-const HomePage = () => (
-   <div className="home">
-      <div className="services-overview">
-         <h2>SERVICES WE OFFER</h2>
-         <div className="services-container">
-            <div className="services-list">
-               <ul>
-                  <li>FULL PODCAST PRODUCTION</li>
-                  <li>SHORT FORM CLIPS</li>
-                  <li>LONG FORM</li>
-                  <li>AUDIO</li>
-                  <li>PROJECT MANAGEMENT</li>
-                  <li>TIKTOK VIDEO EDITING</li>
-               </ul>
+   return (
+      <div className="home">
+         {/* services overview section */}
+         <ServicesOverview />;
+         <div className="portfolio">
+            <h2>A LITTLE TASTE OF WHAT WE DO</h2>
+            {/* Filter and pass only youtube_short type projects to YouTubeShortsSection */}
+            <YouTubeShortsSection
+               projects={projects.filter((p) => p.type === "youtube_short")}
+               renderMedia={renderMedia}
+            />
+
+            {/* Filter and pass only instagram_reel type projects to InstagramReelsSection */}
+            <InstagramReelsSection
+               projects={projects.filter((p) => p.type === "instagram_reel")}
+               renderMedia={renderMedia}
+            />
+
+            {/* Filter and pass only tiktok type projects to TikTokSection */}
+            <TikTokVideosSection
+               projects={projects.filter((p) => p.type === "tiktok_video")}
+               renderMedia={renderMedia}
+            />
+            {/* Filter and pass only iframe type projects to PodcastSection */}
+            <PodcastSection
+               projects={projects.filter((p) => p.type === "iframe")}
+               renderMedia={renderMedia}
+            />
+         </div>
+         {/* Logos Section */}
+         <LogoSection />
+         <div className="collaborators-section">
+            <h2 className="buddies">OUR COLLABORATORS</h2>
+            <div className="collaborators-container">
+               <div className="collaborator">
+                  <img
+                     src="path/to/temporary/image1.png"
+                     alt="Collaborator 1"
+                  />
+                  <p>Collaborator Name 1</p>
+               </div>
+               <div className="collaborator">
+                  <img
+                     src="path/to/temporary/image2.png"
+                     alt="Collaborator 2"
+                  />
+                  <p>Collaborator Name 2</p>
+               </div>
+               <div className="collaborator">
+                  <img
+                     src="path/to/temporary/image3.png"
+                     alt="Collaborator 3"
+                  />
+                  <p>Collaborator Name 3</p>
+               </div>
             </div>
-            <div className="explore-services-btn-container">
-               <button
-                  className="explore-services-btn"
-                  onClick={() => (window.location.href = "/services")}
-               >
-                  EXPLORE ALL OUR EXCITING SERVICES!
-               </button>
-               <img
-                  src={videoEditorImage2}
-                  alt="Service Overview"
-                  className="services-overview-image"
-               />
+         </div>
+         <div className="contact-section">
+            <div className="contact-text">
+               TALK TO US AT INFO@CLOSEDMONDAY.MEDIA
+            </div>
+            <img
+               src={videoEditorImage}
+               alt="Video Editor"
+               className="editor-image"
+            />
+            <div className="contact-info">
+               <p>GOT A PROJECT IN MIND?</p>
+               <p>LET'S TALK AND TURN YOUR VISION INTO REALITY.</p>
+               <p>REACH OUT TO US AND GET YOUR QUOTE TODAY!</p>
             </div>
          </div>
       </div>
-
-      <div className="portfolio">
-         <h2>A little taste of what we do</h2>
-         {/* Use the new PodcastSection component */}
-         <PodcastSection projects={projects} renderMedia={renderMedia} />
-         {/* Use the new YouTubeShortsSection component */}
-         <YouTubeShortsSection projects={projects} renderMedia={renderMedia} />
-      </div>
-
-      <div className="contact-section">
-         <div className="contact-text">TEXT US ANYTIME AT 200-CLOSEDMO</div>
-         <img
-            src={videoEditorImage}
-            alt="Video Editor"
-            className="editor-image"
-         />
-         <div className="contact-info">
-            <p>GOT A PROJECT IN MIND?</p>
-            <p>LET'S TALK AND TURN YOUR VISION INTO REALITY.</p>
-            <p>REACH OUT TO US AND GET YOUR QUOTE TODAY!</p>
-         </div>
-      </div>
-
-      <div className="our-buddies">
-         <h2>Our Buddies</h2>
-         <div className="buddies-list">
-            <a
-               href="http://johnnydrinks.com"
-               target="_blank"
-               rel="noopener noreferrer"
-               className="buddy"
-            >
-               <img src="path_to_johnny_drinks_image.jpg" alt="Johnny Drinks" />
-               <h3>Johnny Drinks</h3>
-            </a>
-            <a
-               href="http://undertheinfluence.com"
-               target="_blank"
-               rel="noopener noreferrer"
-               className="buddy"
-            >
-               <img
-                  src="path_to_under_the_influence_image.jpg"
-                  alt="Under the Influence"
-               />
-               <h3>Under the Influence</h3>
-            </a>
-            <a
-               href="http://suburbtalks.com"
-               target="_blank"
-               rel="noopener noreferrer"
-               className="buddy"
-            >
-               <img src="path_to_suburb_talks_image.jpg" alt="Suburb Talks" />
-               <h3>Suburb Talks</h3>
-            </a>
-         </div>
-      </div>
-   </div>
-);
+   );
+};
 
 export default HomePage;

@@ -7,7 +7,7 @@ const Footer = () => (
       <div className="footer-content">
          {/* Making the logo a link to the homepage */}
          <Link to="/" className="footer-logo-link">
-            <div className="footer-logo">ClosedMonday</div>
+            <div className="footer-logo">Closed Monday</div>
          </Link>
          <div>
             <Link to="/about" className="footer-link">
@@ -21,8 +21,7 @@ const Footer = () => (
             </Link>
          </div>
          <div className="footer-contact">
-            <p className="email">Email: contact@closedmonday.media</p>
-            <p className="phone">Phone: +123 456 7890</p>
+            <p className="email">Email: info@closedmonday.media</p>
             <p className="copyright">
                © 2023 Closed Monday. All rights reserved.
             </p>

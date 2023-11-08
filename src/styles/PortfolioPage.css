@@ -1,8 +1,10 @@
 /* PortfolioPage.css */
 
 .portfolio {
-   padding: 30px 40px;
+   padding: 10px 40px;
    color: #333;
+   max-width: 950px;
+   margin: 0 auto; /* centers the block horizontally */
 }
 
 .filters {
@@ -43,15 +45,15 @@
 .project {
    display: inline-block;
    vertical-align: top;
-   max-width: 320px;
-   padding: 25px;
+   max-width: 360px;
+   /* padding: 25px; */
    border-radius: 10px;
    position: relative;
    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project:hover {
-   transform: scale(1.05);
+   transform: scale(1.01);
    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -86,8 +88,13 @@
 section h2 {
    font-size: 22px;
    margin-bottom: 35px;
-   border-bottom: 3px solid #444;
+   border-bottom: 2px solid #444;
    padding-bottom: 15px;
+   padding-top: 28px;
+}
+
+.tiktoks {
+   padding: 0 10px;
 }
 
 @media (max-width: 768px) {
@@ -118,7 +125,7 @@ section h2 {
    }
 
    .project {
-      max-width: 100%;
+      /* max-width: 1; */
       padding: 15px;
    }
 
@@ -147,4 +154,10 @@ section h2 {
    border-radius: 12px; /* Assuming we want to keep the border-radius as in the projects */
    width: 315px; /* Fixed width as specified */
    height: 560px; /* Fixed height as specified */
+}
+
+@media (max-width: 768px) {
+   .youtube-short-container {
+      gap: 2px;
+   }
 }

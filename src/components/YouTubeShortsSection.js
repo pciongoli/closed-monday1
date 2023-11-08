@@ -3,7 +3,7 @@ import "../styles/PortfolioPage.css";
 
 const YouTubeShortsSection = ({ projects, renderMedia }) => (
    <section>
-      <h2>YouTube Shorts</h2>
+      <h2>YOUTUBE SHORTS</h2>
       <div
          id="youtube-shorts"
          className="media-section youtube-short-container"

@@ -14,7 +14,6 @@
 
 .service-item {
    margin-bottom: 2.5rem; /* Use relative units */
-   border: 1px solid #e0e0e0;
    padding: 2rem;
    border-radius: 10px;
    transition: box-shadow 0.3s ease, transform 0.2s ease;
@@ -22,11 +21,11 @@
    flex-direction: column; /* Start with mobile-first approach */
    align-items: center; /* Center items for mobile */
    width: 100%; /* Full width on mobile */
+   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Hover effects should remain the same, they do not affect responsiveness */
 .service-item:hover {
-   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
    transform: translateY(-5px);
 }
 
@@ -57,9 +56,20 @@
    margin-bottom: 1.25rem;
 }
 
-.price {
-   font-weight: bold;
-   color: #007bff;
+.quote-btn {
+   display: inline-block;
+   margin-top: 1rem; /* Spacing above the button */
+   padding: 10px 20px; /* Padding inside the button */
+   font-size: 1em; /* Font size for the text inside the button */
+   color: #fff; /* Text color */
+   background-color: #007bff; /* Background color */
+   border-radius: 5px; /* Rounded corners */
+   text-decoration: none; /* Remove underline from the link */
+   transition: background-color 0.3s ease; /* Transition for the background color */
+}
+
+.quote-btn:hover {
+   background-color: #0056b3; /* Darker shade on hover for visual feedback */
 }
 
 /* Responsive Styles */
@@ -124,18 +134,13 @@
 
 /* Styling for dropdown content */
 .dropdown-content {
-   display: none;
+   /* display: none; */ /* Remove this line to make the dropdown always visible */
    margin-top: 1rem;
    padding: 1rem;
    border-radius: 0 0 10px 10px;
-   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
    font-size: 1em;
    color: #777;
-   transition: max-height 0.3s ease, opacity 0.3s ease;
-}
-
-.service-item:hover .dropdown-content {
-   display: block;
+   /* transition: max-height 0.3s ease, opacity 0.3s ease; */ /* You can remove this if not needed */
 }
 
 .dropdown-content ul {
