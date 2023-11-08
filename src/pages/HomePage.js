@@ -1,8 +1,8 @@
 // HomePage.js
 import React, { useEffect } from "react";
 import videoEditorImage from "../assets/image/video-editor-img2.png";
-import videoEditorImage2 from "../assets/image/video-editor-img3.png";
 import PodcastSection from "../components/PodcastSection";
+import closedMondayImage from "../assets/image/Closedmonday.png"; // Adjust the path as necessary
 import YouTubeShortsSection from "../components/YouTubeShortsSection";
 import InstagramReelsSection from "../components/InstagramReelsSection";
 import TikTokVideosSection from "../components/TikTokVideosSection";
@@ -43,34 +43,107 @@ const HomePage = () => {
    return (
       <div className="home">
          <div className="services-overview">
-            <h2>SERVICES WE OFFER</h2>
-            <div className="services-container">
-               <div className="services-list">
-                  <ul>
-                     <li>PODCAST PRODUCTION</li>
-                     <li>AUDIO</li>
-                     <li>SHORT FORM CLIPS</li>
-                     <li>LONG FORM</li>
-                     <li>PROJECT MANAGEMENT</li>
-                     <li>TIKTOK , SHORTS , REELS</li>
-                  </ul>
+            <h2>Our Services</h2>
+            <div className="services-content-wrapper">
+               <div className="services-container">
+                  <div className="service">
+                     <span
+                        className="service-icon"
+                        role="img"
+                        aria-label="Video Editing"
+                     >
+                        🎬
+                     </span>
+                     <div className="service-text">
+                        <h3>Video Editing</h3>
+                        <p>
+                           Full production video services to bring your vision
+                           to life.
+                        </p>
+                     </div>
+                     <button
+                        className="learn-more-btn"
+                        onClick={() => (window.location.href = "/services")}
+                     >
+                        Learn More
+                     </button>
+                  </div>
+                  <div className="service">
+                     <span
+                        className="service-icon"
+                        role="img"
+                        aria-label="Audio Editing"
+                     >
+                        🎧
+                     </span>
+                     <div className="service-text">
+                        <h3>Audio Editing</h3>
+                        <p>
+                           Clear and crisp audio editing for all your projects.
+                        </p>
+                     </div>
+                     <button
+                        className="learn-more-btn"
+                        onClick={() => (window.location.href = "/services")}
+                     >
+                        Learn More
+                     </button>
+                  </div>
+                  <div className="service">
+                     <span
+                        className="service-icon"
+                        role="img"
+                        aria-label="Social Media Content"
+                     >
+                        📱
+                     </span>
+                     <div className="service-text">
+                        <h3>Social Media Content</h3>
+                        <p>
+                           Engaging and creative edits for TikToks, Reels, and
+                           Shorts.
+                        </p>
+                     </div>
+                     <button
+                        className="learn-more-btn"
+                        onClick={() => (window.location.href = "/services")}
+                     >
+                        Learn More
+                     </button>
+                  </div>
+                  <div className="service">
+                     <span
+                        className="service-icon"
+                        role="img"
+                        aria-label="Podcasts"
+                     >
+                        🎙️
+                     </span>
+                     <div className="service-text">
+                        <h3>Podcasts</h3>
+                        <p>
+                           Comprehensive editing to ensure your message is
+                           heard.
+                        </p>
+                     </div>
+                     <button
+                        className="learn-more-btn"
+                        onClick={() => (window.location.href = "/services")}
+                     >
+                        Learn More
+                     </button>
+                  </div>
                </div>
-               <div className="explore-services-btn-container">
-                  <button
-                     className="explore-services-btn"
-                     onClick={() => (window.location.href = "/services")}
-                  >
-                     SEE ALL OF OUR SERVICES!
-                  </button>
+               <div className="services-image-container">
                   <img
-                     src={videoEditorImage2}
-                     alt="Service Overview"
-                     className="services-overview-image"
+                     src={closedMondayImage}
+                     alt="Closed Monday"
+                     className="services-image"
                   />
                </div>
             </div>
          </div>
-
+         ;
          <div className="portfolio">
             <h2>A LITTLE TASTE OF WHAT WE DO</h2>
             {/* Filter and pass only tiktok type projects to TikTokSection */}
@@ -94,10 +167,8 @@ const HomePage = () => {
                renderMedia={renderMedia}
             />
          </div>
-
          {/* Logos Section */}
          <LogoSection />
-
          <div className="collaborators-section">
             <h2 className="buddies">OUR COLLABORATORS</h2>
             <div className="collaborators-container">
@@ -124,7 +195,6 @@ const HomePage = () => {
                </div>
             </div>
          </div>
-
          <div className="contact-section">
             <div className="contact-text">
                TALK TO US AT INFO@CLOSEDMONDAY.MEDIA
