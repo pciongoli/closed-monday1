@@ -253,36 +253,35 @@ img {
 
 .services-overview h2 {
    font-size: 1.5em;
-   margin-bottom: 30px; /* Provide some space between the header and the content */
+   margin-bottom: 20px; /* Provide some space between the header and the content */
 }
 
 .services-content-wrapper {
    display: flex;
-   flex-wrap: wrap; /* Allow items to wrap onto the next line */
+   flex-direction: column; /* Stack the children vertically on smaller screens */
    gap: 20px; /* Space between the services and the image */
-   align-items: flex-start; /* Align children at the top */
 }
 
 .services-container {
    display: flex;
    flex-direction: column;
-   flex: 1 0 auto; /* Do not allow the services container to shrink */
 }
 
 .service {
    display: flex;
-   align-items: center; /* Vertically center the icon and text block */
+   align-items: center;
    color: #000;
-   padding: 5px; /* Keep the padding compact */
-   width: 100%; /* Take up full width */
-   position: relative; /* For absolute positioning of the button */
+   padding: 15px; /* Increased padding for more space between services */
+   margin-bottom: 20px; /* Increase space between each service */
+   width: 100%;
+   position: relative;
    overflow: hidden;
    transition: all 0.3s ease;
 }
 
 .service-icon {
-   font-size: 18px; /* Icon size */
-   margin-right: 0.5rem; /* Space between icon and text */
+   font-size: 18px;
+   margin-right: 0.5rem;
 }
 
 .service-text {
@@ -292,13 +291,13 @@ img {
 }
 
 .service h3 {
-   font-size: 18px; /* Increased heading size */
-   margin: 0; /* Remove margin to control spacing */
+   font-size: 18px;
+   margin: 0;
 }
 
 .service p {
-   font-size: 14px; /* Increased paragraph text size */
-   margin: 4px 0; /* Controlled margin for spacing */
+   font-size: 14px;
+   margin: 4px 0;
 }
 
 .learn-more-btn {
@@ -308,7 +307,7 @@ img {
    padding: 8px 16px;
    border: none;
    border-radius: 15px;
-   background-color: #fff; /* Assuming a background color for the button */
+   background-color: #fff;
    color: #000;
    cursor: pointer;
    transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -320,29 +319,37 @@ img {
 }
 
 .services-image-container {
-   text-align: center; /* Center the image on smaller screens */
-   width: 100%; /* Full width on smaller screens */
-   order: -1; /* Make the image appear first on smaller screens */
+   text-align: center;
+   width: 100%; /* Take up full width on smaller screens */
+   order: 2; /* Ensure the image appears after the services on smaller screens */
 }
 
 .services-image {
-   width: 100%; /* Make the image responsive */
-   height: auto; /* Maintain the aspect ratio */
+   max-width: 100%; /* Ensure the image is not bigger than its container */
+   height: auto;
 }
 
 /* Media query for tablet and desktop sizes */
 @media (min-width: 768px) {
    .services-content-wrapper {
-      flex-wrap: nowrap; /* Do not wrap items */
+      flex-direction: row; /* Side by side on larger screens */
+      align-items: center; /* Center-align the children vertically */
+      justify-content: space-between; /* Add space between the services and the image */
    }
 
-   .services-container {
-      flex: 1; /* Allow the services container to grow if there is space */
+   .services-container,
+   .services-image-container {
+      width: auto; /* Allow the width to auto adjust based on content */
+      flex: 1; /* Give them flexibility to grow */
+   }
+
+   .service {
+      padding: 10px; /* Adjust padding for larger screens */
+      margin-bottom: 15px; /* Adjust spacing between services for larger screens */
    }
 
    .services-image-container {
-      width: 300px; /* Fixed width for larger screens */
-      order: 0; /* Reset the order so the image appears to the side */
-      text-align: unset; /* Reset text alignment for larger screens */
+      order: 0; /* Reset order for larger screens */
+      align-self: auto; /* Default alignment */
    }
 }
