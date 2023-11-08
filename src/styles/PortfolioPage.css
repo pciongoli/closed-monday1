@@ -45,8 +45,8 @@
 .project {
    display: inline-block;
    vertical-align: top;
-   max-width: 320px;
-   padding: 25px;
+   max-width: 360px;
+   /* padding: 25px; */
    border-radius: 10px;
    position: relative;
    transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -91,6 +91,10 @@ section h2 {
    border-bottom: 2px solid #444;
    padding-bottom: 15px;
    padding-top: 28px;
+}
+
+.tiktoks {
+   padding: 0 10px;
 }
 
 @media (max-width: 768px) {
@@ -150,4 +154,10 @@ section h2 {
    border-radius: 12px; /* Assuming we want to keep the border-radius as in the projects */
    width: 315px; /* Fixed width as specified */
    height: 560px; /* Fixed height as specified */
+}
+
+@media (max-width: 768px) {
+   .youtube-short-container {
+      gap: 2px;
+   }
 }

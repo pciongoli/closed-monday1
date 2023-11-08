@@ -9,7 +9,7 @@ const TikTokVideosSection = ({ projects, renderMedia }) => (
          {projects
             .filter((p) => p.type === "tiktok_video")
             .map((project, index) => (
-               <div className="project" key={index}>
+               <div className="project tiktoks" key={index}>
                   {renderMedia(project)}
                </div>
             ))}
