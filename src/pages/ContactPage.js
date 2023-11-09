@@ -93,10 +93,6 @@ const ContactPage = () => {
                   <button type="submit">Submit</button>
                </form>
             </div>
-            <div className="contact-details">
-               <h2>Contact Details</h2>
-               <p>Email: contact@videoeditor.com</p>
-            </div>
          </div>
       </div>
    );

@@ -1,12 +1,8 @@
 // HomePage.js
 import React, { useEffect } from "react";
 import ServicesOverview from "../components/ServicesOverview";
-import PodcastSection from "../components/PodcastSection";
-import YouTubeShortsSection from "../components/YouTubeShortsSection";
-import InstagramReelsSection from "../components/InstagramReelsSection";
-import TikTokVideosSection from "../components/TikTokVideosSection";
+import UnifiedMediaSection from "../components/UnifiedMediaSection";
 import CollaboratorSection from "../components/CollaboratorSection";
-// import videoEditorImage from "../assets/image/video-editor-img2.png";
 import projects from "../components/ProjectsData";
 import { renderMedia } from "../components/Mediarenderer";
 import LogoSection from "../components/LogoSection";
@@ -46,31 +42,37 @@ const HomePage = () => {
          {/* services overview section */}
          <ServicesOverview />;
          <div className="portfolio">
-            <h2>A LITTLE TASTE OF WHAT WE DO</h2>
+            {/* <h2>A LITTLE TASTE OF WHAT WE DO</h2> */}
             {/* Logos Section */}
             <LogoSection />
+            {/* Unified Media Section */}
+            <UnifiedMediaSection
+               projects={projects}
+               renderMedia={renderMedia}
+            />
+
             {/* Filter and pass only youtube_short type projects to YouTubeShortsSection */}
-            <YouTubeShortsSection
+            {/* <YouTubeShortsSection
                projects={projects.filter((p) => p.type === "youtube_short")}
                renderMedia={renderMedia}
-            />
+            /> */}
 
             {/* Filter and pass only instagram_reel type projects to InstagramReelsSection */}
-            <InstagramReelsSection
+            {/* <InstagramReelsSection
                projects={projects.filter((p) => p.type === "instagram_reel")}
                renderMedia={renderMedia}
-            />
+            /> */}
 
             {/* Filter and pass only tiktok type projects to TikTokSection */}
-            <TikTokVideosSection
+            {/* <TikTokVideosSection
                projects={projects.filter((p) => p.type === "tiktok_video")}
                renderMedia={renderMedia}
-            />
+            /> */}
             {/* Filter and pass only iframe type projects to PodcastSection */}
-            <PodcastSection
+            {/* <PodcastSection
                projects={projects.filter((p) => p.type === "iframe")}
                renderMedia={renderMedia}
-            />
+            /> */}
          </div>
          {/* Collaborator Section */}
          <CollaboratorSection />

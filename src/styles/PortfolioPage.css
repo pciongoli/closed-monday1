@@ -1,7 +1,5 @@
-/* PortfolioPage.css */
-
 .portfolio {
-   padding: 10px 40px;
+   /* padding: 10px 40px; */
    color: #333;
    max-width: 950px;
    margin: 0 auto; /* centers the block horizontally */
@@ -39,14 +37,14 @@
    white-space: nowrap;
    flex-wrap: wrap;
    gap: 40px;
-   margin-bottom: 40px;
 }
 
 .project {
    display: inline-block;
    vertical-align: top;
    max-width: 360px;
-   /* padding: 25px; */
+   max-height: 600px;
+   padding: 0 25px;
    border-radius: 10px;
    position: relative;
    transition: transform 0.3s ease, box-shadow 0.3s ease;
