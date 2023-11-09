@@ -61,7 +61,6 @@
    order: 1;
    display: flex;
    gap: 20px;
-   flex: 1;
 }
 
 .footer-icons a {

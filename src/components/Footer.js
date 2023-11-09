@@ -16,44 +16,23 @@ const Footer = () => (
             <Link to="/careers" className="footer-link">
                Careers
             </Link>
-            <Link to="/contact" className="footer-link">
+            {/* <Link to="/contact" className="footer-link">
                Contact
-            </Link>
+            </Link> */}
          </div>
          <div className="footer-contact">
-            <p className="email">Email: info@closedmonday.media</p>
+            <p className="email">Email: joe@closedmonday.media</p>
             <p className="copyright">
                © 2023 Closed Monday. All rights reserved.
             </p>
          </div>
          <div className="footer-icons">
             <a
-               href="https://facebook.com"
-               target="_blank"
-               rel="noopener noreferrer"
-            >
-               <i className="fab fa-facebook-f"></i>
-            </a>
-            <a
-               href="https://twitter.com"
-               target="_blank"
-               rel="noopener noreferrer"
-            >
-               <i className="fab fa-twitter"></i>
-            </a>
-            <a
-               href="https://instagram.com"
+               href="https://www.instagram.com/closedmondayllc/"
                target="_blank"
                rel="noopener noreferrer"
             >
                <i className="fab fa-instagram"></i>
-            </a>
-            <a
-               href="https://linkedin.com"
-               target="_blank"
-               rel="noopener noreferrer"
-            >
-               <i className="fab fa-linkedin-in"></i>
             </a>
          </div>
       </div>

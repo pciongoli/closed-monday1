@@ -7,42 +7,15 @@ import spotifyLogo from "../assets/image/spotify-logo.png";
 
 const LogoSection = () => (
    <div className="logos-section">
-      <a
-         href="https://www.youtube.com"
-         target="_blank"
-         rel="noopener noreferrer"
-      >
-         <img
-            src={youtubeShortsLogo}
-            alt="YouTube Shorts Logo"
-            className="logo"
-         />
-      </a>
-      <a
-         href="https://www.instagram.com"
-         target="_blank"
-         rel="noopener noreferrer"
-      >
-         <img
-            src={instagramReelsLogo}
-            alt="Instagram Reels Logo"
-            className="logo"
-         />
-      </a>
-      <a
-         href="https://www.tiktok.com"
-         target="_blank"
-         rel="noopener noreferrer"
-      >
-         <img src={tiktokLogo} alt="TikTok Logo" className="logo" />
-      </a>
-      <a
-         href="https://www.spotify.com"
-         target="_blank"
-         rel="noopener noreferrer"
-      >
-         <img src={spotifyLogo} alt="YouTube Shorts Logo" className="logo" />
-      </a>
+      ={" "}
+      <img src={youtubeShortsLogo} alt="YouTube Shorts Logo" className="logo" />
+      <img
+         src={instagramReelsLogo}
+         alt="Instagram Reels Logo"
+         className="logo"
+      />
+      <img src={tiktokLogo} alt="TikTok Logo" className="logo" />
+      <img src={spotifyLogo} alt="YouTube Shorts Logo" className="logo" />
    </div>
 );
 

@@ -17,7 +17,6 @@ const CollaboratorSection = () => {
                >
                   <img src={JohnnyDrinksImage} alt="Collaborator 1" />
                </a>
-               <p>Johnny Drinks</p>
             </div>
             <div className="collaborator">
                <a
@@ -27,7 +26,6 @@ const CollaboratorSection = () => {
                >
                   <img src={UnderTheInfluenceImage} alt="Collaborator 2" />
                </a>
-               <p>Under The Influence</p>
             </div>
             <div className="collaborator">
                <a
@@ -37,7 +35,6 @@ const CollaboratorSection = () => {
                >
                   <img src={SuburbTalksImage} alt="Collaborator 3" />
                </a>
-               <p>Suburb Talks</p>
             </div>
          </div>
       </div>

@@ -21,6 +21,10 @@
    margin-bottom: 10px;
 }
 
+.buddies {
+   padding: 0 10px;
+}
+
 .collaborator p {
    margin: 0;
    font-weight: bold;

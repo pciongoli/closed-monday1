@@ -102,9 +102,9 @@ const Service = ({ data }) => {
                      <li key={index}>{detail}</li>
                   ))}
                </ul>
-               <Link to="/contact" className="quote-btn">
+               {/* <Link to="/contact" className="quote-btn">
                   Get a Quote!
-               </Link>
+               </Link> */}
             </div>
          </div>
       </div>
