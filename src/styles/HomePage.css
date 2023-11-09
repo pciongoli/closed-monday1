@@ -149,36 +149,6 @@ img {
    margin: 0 20px;
 }
 
-.collaborators-section {
-   padding: 20px;
-}
-
-.collaborators-container {
-   display: flex;
-   justify-content: space-around;
-   flex-wrap: wrap;
-}
-
-.collaborator {
-   margin: 10px;
-   padding: 10px;
-   background-color: #ffffff;
-   border-radius: 10px;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.collaborator img {
-   width: 150px;
-   height: 150px;
-   border-radius: 50%;
-   margin-bottom: 10px;
-}
-
-.collaborator p {
-   margin: 0;
-   font-weight: bold;
-}
-
 .buddies {
    align-items: left;
 }
@@ -189,7 +159,7 @@ img {
    align-items: center;
    margin-top: 20px;
    flex-wrap: wrap;
-   padding: 20px 10px 50px 10px;
+   padding: 10px;
 }
 
 .logos-section .logo {
